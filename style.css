@@ -1,0 +1,46 @@
+.container{
+    margin: 50px;
+}
+
+input {
+    text-align: center;
+    margin: 10px 0;
+    padding: 20px;
+    width: 150px;
+    background-color: aqua;
+  }
+
+  button {
+      margin-right: 10px;
+    margin-top: 15px;
+    padding: 15px;
+    width: 200px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+span{
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+    font-size: 20px;
+    padding: 5px;
+    padding-top: 10px;
+}
+span:hover {
+    cursor: pointer;
+  }
+
+  h1{
+    display: inline-block;
+    font-size: 20px;
+    color: black;
+  }
+
+ 
+  .pass{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
