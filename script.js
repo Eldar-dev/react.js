@@ -84,3 +84,16 @@ function flexStyle() {
   
   flexStyle();
 
+  document.getElementById('search').onkeyup = function(){
+    document.getElementById('root').innerHTML = '';
+    var less = this.value.length;
+    if(less>0){
+        for(var i=0;i<array.length;i++){
+            var sir = array[i].split('').slice(0,less).join('');
+            if(sir==this.value){
+                document.getElementById('root').innerHTML+=array[i]+'<br/>';
+            }
+        }
+    }
+};
+
