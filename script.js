@@ -1,4 +1,4 @@
-var inputData = document.querySelector("input[type='text']");
+let inputData = document.querySelector("input[type='text']");
 let array = [];
 
 
@@ -66,11 +66,24 @@ function todoApp(){
 todoApp();
 
 
-
+document.getElementById('search').onkeyup = function(){
+    document.getElementById('root').innerHTML = '';
+    let less = this.value.length;
+    if(less>0){
+        for(let i=0;i<array.length;i++){
+            let sir = array[i].split('').slice(0,less).join('');
+            if(sir==this.value){
+                document.getElementById('root').innerHTML+=array[i]+'<br/>';
+            }
+        }
+    } /*else {
+      document.getElementById('root').innerHTML = todoApp();
+    }*/
+};
 
 
 function flexStyle() {
-    var style = document.createElement('style');
+    let style = document.createElement('style');
     style.innerHTML = `
       
       button:hover {
@@ -83,17 +96,4 @@ function flexStyle() {
   }
   
   flexStyle();
-
-  document.getElementById('search').onkeyup = function(){
-    document.getElementById('root').innerHTML = '';
-    var less = this.value.length;
-    if(less>0){
-        for(var i=0;i<array.length;i++){
-            var sir = array[i].split('').slice(0,less).join('');
-            if(sir==this.value){
-                document.getElementById('root').innerHTML+=array[i]+'<br/>';
-            }
-        }
-    }
-};
 

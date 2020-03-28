@@ -20,7 +20,7 @@ input {
     font-size: 16px;
   }
 
-span{
+#root, span{
     font-family: 'Courier New', Courier, monospace;
     color: red;
     font-size: 20px;
