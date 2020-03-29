@@ -28,7 +28,17 @@ async function rool(){
   try{
       let response = await fetch("https://rn-todo-app-c27d4.firebaseio.com/todos.json");
       let data = await response.json();
-     console.log(data);
+      console.log(data);
+      todoPush(data);
+  }
+  catch(e){
+      console.log(e);
+  }
+}
+
+rool();
+
+function todoPush(data){
       for (const key in data) {
         if (data.hasOwnProperty(key)) {
             const element = data[key];    
@@ -38,14 +48,6 @@ async function rool(){
     }     
      todoApp();
   }
-  catch(e){
-      console.log(e);
-  }
-}
-
-rool();
-
-
 
 function todoApp(){
   let container = document.querySelector(".root");
@@ -66,7 +68,7 @@ function todoApp(){
 todoApp();
 
 
-document.getElementById('search').onkeyup = function(){
+document.getElementById('search').oninput = function(){
     document.getElementById('root').innerHTML = '';
     let less = this.value.length;
     if(less>0){
